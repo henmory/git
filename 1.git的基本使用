@@ -1,0 +1,58 @@
+1.git使用前需要一些配置，包含用户名跟密码
+
+2.git的配置文件有不同的地方
+  
+  /etc/gitconfig：用户名密码
+  
+  当前使用的仓库的.git文件夹
+
+3.git使用前先初始化 即  git init
+
+4.git文件状态： untracked                 staged                     commited
+              
+              本地没有加入到git版本控制中   加入到暂存区里面              加入到历史版本库中
+         
+5.untracked 文件在版本控制器文件夹中，但是没有做任何操作
+  
+  加入staged 通过git add加入到 staged
+  
+  在staged状态的文件通过 git commit 添加到历史版本库中
+
+6.git status 查看文件的状态，这个非常重要，记录了所有处于版本控制的文件的状态
+
+7.修改了某个文件没有add的处在modify状态，需要通过add变成staged
+
+8.总结：1.add 把一个没有track的文件变成staged  2.把一个修改了文件变成staged
+
+9.commit提交到历史区，后面需要加上注释采用-m 不加会自动跳转到vim中
+
+10.diff用来比较不同＝＝主要是比较目前工作区跟暂存区的不同
+  
+  diff --git a/readme b/readme
+  
+  index b6fc4c6..04fea06 100644
+  
+  --- a/readme //表示文件减少了哪些内容
+  
+  +++ b/readme //表示文件增加了哪些内容
+  
+  @@ -1 +1 @@ //这估计是减少和增加的行数吧
+  
+  -hello
+  
+  \ No newline at end of file
+  
+  +world
+  
+  \ No newline at end of file
+ 
+11.如果查看暂存区和历史区的不同，则需要 git diff --cachedd
+
+12.把一个文件不放在版本控制去，可以添加.gitignor文件，或者rm这个没有好好学
+
+13.删除一个文件，如果只是自己手动把文件删除，它还是会在git中的，正确的做法是git rm ＋文件名，这样它会从我们的磁盘消失而且git历史版本库也不会管他
+
+
+
+  
+  
